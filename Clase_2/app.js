@@ -38,14 +38,17 @@ let ausenciaDeValor = null;
 //--------------------------------------------------------------------------
 //                     TIPOS DE DATOS EN JAVASCRIPT:                       |
 //--------------------------------------------------------------------------
+
+
 /* 
-  - string (texto)
-  - number (número)
-  - boolean (verdadero/falso)
+
+  - string (texto)= ""
+  - number (número)= 123
+  - boolean (verdadero/falso) = true/false
   - undefined (no definido)
   - null (nulo)
   - object (objeto)
-  
+
   */
 
 //-----------------------------------------------------------------------------
