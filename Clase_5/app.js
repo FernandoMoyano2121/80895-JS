@@ -11,10 +11,10 @@ const lista = ["fernando", "Juan"];
 */
 
 class Task {
-  constructor(id, descripcion, venciminto, estado) {
+  constructor(id, descripcion, vencimiento, estado) {
     this.id = id;
     this.descripcion = descripcion;
-    this.venciminto = venciminto;
+    this.vencimiento = vencimiento;
     this.estado = estado;
   }
 }
@@ -40,9 +40,21 @@ class TaskList {
     }
   }
 
-  /* deleteTask(){} */
-  /* edicitTask(id){} */
-  /* showTasks(){} */
+  /* deleteTask(){} --find() --filter()*/
+  /* showTasks(){} --forEach() */
+
+  editTask(id, updateTask){
+    const taskToEdit = this.tasks.find( (task) => task.id === id)
+    if(taskToEdit){
+      taskToEdit.descripcion = updateTask.descripcion
+      taskToEdit.vencimiento = updateTask.vencimiento
+      taskToEdit.estado = updateTask.estado
+    }else{
+      alert("No se encontro la tarea")
+    }
+
+    this.saveInLocalStorage()
+  }
 }
 
 //GENERACION DE LISTA DE TAREAS
@@ -57,6 +69,13 @@ if (myTaskList.tasks.length === 0) {
   //AGREGAMOS TAREAS AL LISTADO
   myTaskList.addTask(task1);
   myTaskList.addTask(task2);
+
+  //EDITAR TAREA
+  myTaskList.editTask(1, {
+    descripcion:"Hacer compras",
+    vencimiento:"2025-09-16",
+    estado:"en progreso"
+  })
 }
 
 myTaskList.saveInLocalStorage();
